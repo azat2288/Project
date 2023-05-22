@@ -1,0 +1,58 @@
+/* ---------------------------Скролл--------------------------- */
+* {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------Скролл--------------------------- */
+
+/* ---------------------------Кнопка "Начать"--------------------------- */
+.btn:hover,
+.btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.third {
+  color: #ffffff;
+  background: linear-gradient(to bottom left, #A7A3D9, #79A6FE);
+  transition: 0.2s linear;
+}
+
+.third:hover {
+  box-shadow: 0 0 10px 2px #79A6FE inset, 0px 0 10px 3px #A7A3D9;
+  background: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to left, #A7A3D9, #79A6FE);
+}
+
+/* ---------------------------Кнопка "Начать"--------------------------- */
+
+/* ---------------------------Навигация --------------------------- */
+.left_nav_p:hover {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right, #4685b7, #4685b7, #4685b7, #4685b7, #ffdc63, #ffdc63, #ffdc63, #ffdc63);
+}
+
+.left_nav_j:hover {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right, #fffe00, #f6e600, #ebcf00, #dfb900, #d1a301);
+}
+
+/* ---------------------------Кнопка "Начать"--------------------------- */
+
+/* ---------------------------Шрифт--------------------------- */
+.font {
+  font-family: 'JetBrains Mono'
+}
+
+/* ---------------------------Шрифт--------------------------- */
+.eee{
+  border-image-source: linear-gradient(to top, #9a25fa, #3775f1);
+  border-image-slice: 1;
+}

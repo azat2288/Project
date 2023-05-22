@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript</title>
+
+  <!------------------------ Scripts ------------------------>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript">
+    function Copy(containerid) {
+      let textarea = document.createElement('textarea');
+      textarea.id = 'temp';
+      textarea.style.height = 0;
+      document.body.appendChild(textarea);
+      textarea.value = document.getElementById(containerid).innerText;
+      let selector = document.querySelector('#temp');
+      selector.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+  <script src="/resources/static/scripts/main.js"></script>
+  <!------------------------ /Scripts ------------------------>
+
+  <!------------------------ Styles ------------------------>
+  <link rel="stylesheet" href="/resources/static/styles/global.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+  <!------------------------ /Styles ------------------------>
+
+  <!------------------------ Fonts ------------------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+    <!------------------------ /Fonts ------------------------>
+
+</head>
+
+<body class="bg-[#1E2433]">
+   <!------------------------ Шапка ------------------------>
+  <header
+    class="w-screen z-50 backdrop-sepia-0 bg-gray-50/50 text-gray-50 backdrop-blur fixed flex items-center justify-between">
+    <div class=" w-full flex items-center justify-between max-w-7xl mx-auto h-20 gap-6">
+      <div class="flex space-x-10">
+        <a href="/index.html" class="">
+          <img src="/resources/media/images/Logo.png" alt="logo">
+        </a>
+        <p class="flex items-center font-bold text-[#1E2433] select-none">Учись программировать <br> вместе с нами</p>
+      </div>
+      <!------------------------ Навигация ------------------------>
+      <nav class="flex items-center gap-4">
+        <a href="/Python.html"
+          class="text-ms text-gray-900 hover:bg-gray-900 hover:text-gray-100 px-3 py-2 duration-200 rounded-md transition ease-in">Python</a>
+        
+        <a href="/JavaScript.html"
+          class=" text-gray-900 hover:bg-gray-900 hover:text-gray-100 px-3 py-2 duration-200 rounded-md transition ease-in">JavaScript</a>
+      </nav>
+      <!------------------------ /Навигация ------------------------>
+
+      <!------------------------ Кнопка "Контакты" ------------------------>
+      <div class="absolute ml-[75%] mt-[90%] w-32 flex justify-evenly">
+        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" data-dropdown-placement="bottom-end"
+          data-dropdown-placement="bottom"
+          class=" flex justify-center text-[#a2a3ff] border-2 bg-slate-700 hover:bg-gray-800/90 hover:text-white w-24 py-2 duration-200 rounded-md transition ease-in"
+          type="button">Контакты</button>
+
+        <!------------------------ Dropdown menu ------------------------>
+        <div id="dropdownDivider"
+          class="z-10 hidden  bg-gradient-to-bl from-[#A7A3D9] to-[#79A6FE] divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+          <ul class="py-2 text-base text-white" aria-labelledby="dropdownDividerButton">
+            <li>
+              <a href="#discord" onclick="window.open('https://discord.gg/JnmrshNjHW?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2a3ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/logo-ds.png" alt="Discord image">
+                Discord
+              </a>
+            </li>
+            <li>
+              <a href="#telegram"
+                onclick="window.open('https://t.me/+VyQ9PenyfAM2NTVi?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/tg-pic.png" alt="Telegram image">
+                Telegram
+              </a>
+            </li>
+            <li>
+              <a href="#vk" onclick="window.open('https://vk.com/id714392577?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/vk.png" alt="VK image">
+                VK
+              </a>
+            </li>
+          </ul>
+          <div class="py-2">
+            <a href="tel:88005553535" title="Позвонить"
+              class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">8
+              800-555-35-35</a>
+          </div>
+        </div>
+        <!------------------------ /Dropdown menu ------------------------>
+      </div>
+      <!------------------------ /Кнопка "Контакты" ------------------------>
+    </div>
+  </header>
+   <!------------------------ /Шапка ------------------------>
+
+  <main id="main" class="bg-[#1E2433] text-white h-screen w-auto flex">
+    <!------------------------ Навигация ------------------------>
+    <section class="w-4/12 h-screen mt-20 flex justify-end ">
+      <nav
+        class="z-0 flex w-4/12 items-end pt-12 flex-col h-screen fixed font-medium text-right text-white space-y-4 border-r-2 border-gray-50/50">
+        <a href="#№1" id="0" class="pr-4 left_nav_j text-2xl hover:-translate-x-2 duration-300">JavaScript. Переменные</a>
+        <div class="flex items-end flex-col text-left gap-2 text-zinc-200">
+          <a href="#№1.1" id="1" class=" pr-4 text-base left_nav_j hover:-translate-x-1 duration-300">Введение в переменные</a>
+          <a href="#№1.2" id="2" class="pr-4 text-base left_nav_j hover:-translate-x-1 duration-300">
+            Типы данных
+          </a>
+          <a href="#№1.3" id="3" class="pr-4 text-base left_nav_j hover:-translate-x-1 duration-300">
+            Комментарии
+          </a>
+        </div>
+        <a href="#№2" id="00" class="pr-4 text-2xl left_nav_j hover:-translate-x-2 duration-300">Работа с переменными</a>
+        <div class="flex items-end flex-col text-left gap-2 text-zinc-200">
+          <a href="#№2.1" id="4" class="pr-4 text-base left_nav_j hover:-translate-x-1 duration-300">Операторы</a>
+          <a href="#№2.2" id="5" class="pr-4 text-base left_nav_j hover:-translate-x-1 duration-300">
+            Условия
+          </a>
+          <a href="#№2.3" id="6" class="pr-4 text-base left_nav_j hover:-translate-x-1 duration-300">
+            Функции
+          </a>
+          <a href="#№2.4" id="7" class="pr-4 text-base left_nav_j hover:-translate-x-1 duration-300">
+            События
+          </a>
+        </div>
+      </nav>
+      <!------------------------ /Навигация ------------------------>
+
+    </section>
+    <section class="h-auto w-7/12 pt-20 relative ">
+      <div class="pt-12 pl-4 pr-20 space-y-8">
+        <!------------------------ блок 1 ------------------------>
+        <h1 id="№1" class="text-3xl font-semibold">
+          JavaScript. Переменные
+        </h1>
+        <div class="space-y-6 text-base">
+          <!------------------------ Тема 1(введение в переменные) ------------------------>
+          <h2 id="№1.1" class="text-2xl font-medium">Введение в переменные</h2>
+          <div class="space-y-4 text-base">
+            <p class="pb-2">
+              Переменные — это контейнеры, внутри которых вы можете хранить значения. Вы начинаете с того, что
+              объявляете переменную с помощью ключевого слова var (не рекомендуется) или let, за которым следует любое
+              имя, которым вы захотите её назвать:
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6 " id="toCopy1">
+                <li class="">
+                  <font color="#F9EE98">let</font> myVariable; <font color="#5F5A60">// Объявление переменной</font>
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy1')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="py-2">После объявления переменной вы можете присвоить ей значение:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6 " id="toCopy2">
+                <li> myVariable <font color="#CDA869">=</font>
+                  <font color="#8F9D6A">'Bob'</font>; <font color="#5F5A60">// Присваивание значения</font>
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy2')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="py-2">Вы можете сделать обе эти операции на одной и той же строке, если вы захотите:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6 " id="toCopy3">
+                <li>
+                  <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                  <font color="#8F9D6A">'Bob'</font>; <font color="#5F5A60">// И объявление, и присваивание</font>
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy3')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="py-2">Вы можете получить значение, просто вызвав переменную по имени:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6 " id="toCopy4">
+                <li> myVariable; <font color="#5F5A60">// Вызов переменной</font>
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy4')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="py-2">После установки значения переменной вы можете изменить его позже:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6 " id="toCopy5">
+                <li>
+                  <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                  <font color="#8F9D6A">'Bob'</font>;
+                </li>
+                <li> myVariable <font color="#CDA869">=</font>
+                  <font color="#8F9D6A">'Steve'</font>; <font color="#5F5A60">// Измененная</font>
+                </li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy5')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        <!------------------------ Тема 1(введение в переменные) ------------------------>
+
+          <!------------------------ Тема 2(типы данных) ------------------------>
+          <h2 id="№1.2" class="text-2xl font-medium">
+            Типы данных
+          </h2>
+          <div class="text-base space-y-4">
+            <p class="">
+              Переменные имеют разные типы данных:
+            </p>
+            <ul class="list-decimal  space-y-3">
+              <li class="font-medium ml-6 text-xl">String</li>
+              <p> Последовательность текста, называемая строкой. Чтобы указать, что это значение является строкой, вы
+                должны заключить его в кавычки.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6 " id="toCopy6">
+                  <li>
+                    <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                    <font color="#8F9D6A">'Bob'</font>;
+                  </li>
+                </ul>
+                <div class="flex justify-between gap-1 pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy6')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Number</li>
+              <p>Числа. Числа не имеют кавычек вокруг них.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6 " id="toCopy7">
+                  <li>
+                    <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                    <font color="#CF6A4C">10</font>;
+                  </li>
+                </ul>
+                <div class="flex justify-between gap-1 pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy7')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Boolean</li>
+              <p>Значение True(Правда)/False(Ложь). Слова true и false специальные ключевые слова в JS, и не нуждаются в
+                кавычках.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6 " id="toCopy8">
+                  <li> myVariable <font color="#CDA869">=</font>
+                    <font color="#CDA869">true</font>;
+                  </li>
+                </ul>
+                <div class="flex justify-between gap-1 pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy8')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Array</li>
+              <p>Массив, который позволяет хранить несколько значений в одной ссылке.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6 " id="toCopy9">
+                  <li>
+                    <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font> [<font color="#CF6A4C">1
+                    </font>,<font color="#8F9D6A">'Bob'</font>,<font color="#8F9D6A">'Steve'</font>,<font
+                      color="#CF6A4C">10</font>];
+                  </li>
+                  <li>
+                    <font color="#5F5A60">/** </font>
+                  </li>
+                  <li>
+                    <font color="#5F5A60">* Обратиться к каждому элементу массива можно так: </font>
+                  </li>
+                  <li>
+                    <font color="#5F5A60">* myVariable[0], myVariable[1], и т.д. </font>
+                  </li>
+                  <li>
+                    <font color="#5F5A60">*/</font>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy9')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Object</li>
+              <p>В принципе, что угодно. Все в JavaScript является объектом, и может храниться в переменной. Имейте это
+                в виду, пока вы учитесь.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6 " id="toCopy10">
+                  <li>
+                    <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                    <font color="#7587A6">document</font>.querySelector(<font color="#8F9D6A">'h1'</font>);
+                  </li>
+                  <li>
+                    <font color="#5F5A60">/**</font>
+                  </li>
+                  <li>
+                    <font color="#5F5A60">* Все это из вышеприведённых примеров.</font>
+                  </li>
+                  <li>
+                    <font color="#5F5A60">*/</font>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy10')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </ul>
+            <p class="pt-2">
+              Так для чего нам нужны переменные? Что ж, переменные должны были сделать что-нибудь интересное в
+              программировании. Если значения не могли бы изменяться, то вы не могли бы ничего сделать динамическим,
+              например, персонализировать приветственное сообщение или сменить изображение, отображаемое в галерее
+              изображений.
+            </p>
+          </div>
+
+          <!------------------------ Тема 3 ------------------------>
+          <h2 id="№1.3" class="text-2xl font-medium">
+            Комментарии
+          </h2>
+          <div class="text-base space-y-4">
+            <p class="pb-3">
+              Комментарии - это, по сути, короткие фрагменты текста, которые могут быть добавлены в код, и которые
+              игнорируются браузером. Вы можете поместить комментарии в JavaScript-код, так же как вы делали это в CSS:
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6 " id="toCopy11">
+                <li>
+                  <font color="#5F5A60">/**</font>
+                </li>
+                <li>
+                  <font color="#5F5A60">* Всё, что находится тут - комментарий.</font>
+                </li>
+                <li>
+                  <font color="#5F5A60">*/</font>
+                </li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy11')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="pt-2">
+              Если ваш комментарий не содержит переноса строк, то зачастую легче поставить две косые черты, как тут:
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6 " id="toCopy12">
+                <li>
+                  <font color="#5F5A60">// Это комментарий</font>
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy12')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!------------------------блок 2 ------------------------>
+        <h1 id="№2" class="text-3xl pt-2 font-semibold">
+          Работа с переменными
+        </h1>
+        <div class="space-y-6 text-base">
+          <!------------------------ Тема 1 ------------------------>
+          <h2 id="№2.1" class="text-2xl  font-medium">Операторы</h2>
+          <div class="space-y-4 text-base">
+            <p class="pb-2">
+              Operator (en-US) — это математический символ, который производит результат, основанный на двух значениях
+              (или переменных). В приведённой ниже таблице вы можете увидеть некоторые из наиболее простых операторов,
+              наряду с некоторыми примерами, которые опробуете в JavaScript консоли. </p>
+            <ul class="list-decimal space-y-3">
+              <li class="font-medium ml-6 text-xl">Сложение (+)</li>
+              <p> Используется для сложения двух чисел или склеивания двух строк вместе.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy13">
+                  <li>
+                    <font color="#CF6A4C">6</font>
+                    <font color="#CDA869">+</font>
+                    <font color="#CF6A4C">9</font>;
+                  </li>
+                  <li>
+                    <font color="#8F9D6A">"Hello "</font>
+                    <font color="#CDA869">+</font>
+                    <font color="#8F9D6A">"world!"</font>;
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy13')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Вычитание (-), Умножение (*), Деление (/)</li>
+              <p>Они делают то, чего вы от них ожидаете в математике.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy14">
+                  <li>
+                    <font color="#CF6A4C">9</font>
+                    <font color="#CDA869">-</font>
+                    <font color="#CF6A4C">3</font>;
+                  </li>
+                  <li>
+                    <font color="#CF6A4C">8</font>
+                    <font color="#CDA869">*</font>
+                    <font color="#CF6A4C">2</font>;
+                  </li>
+                  <li>
+                    <font color="#CF6A4C">9</font>
+                    <font color="#CDA869">/</font>
+                    <font color="#CF6A4C">3</font>;
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy14')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Присваивание (=)</li>
+              <p>Вы уже это видели: он присваивает значение переменной.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy15">
+                  <li>
+                    <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                    <font color="#8F9D6A">'Bob'</font>;
+                  </li>
+                </ul>
+                <div class="flex justify-between gap-1 pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy15')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Равенство/Тождество (===)</li>
+              <p>Делает проверку, если увидит, что два значения равны друг другу, то возвращает результат true/false
+                (Boolean).</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy16">
+                  <li>
+                    <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                    <font color="#CF6A4C">3</font>;
+                  </li>
+                  <li>myVariable <font color="#CDA869">===</font>
+                    <font color="#CF6A4C">4</font>;
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy16')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <li class="font-medium ml-6 text-xl pt-2">Отрицание/Неравенство (!)/(!==)</li>
+              <p>Возвращает логически противоположное значение, которое ему предшествует; превращает true в false, и
+                т.д. Когда используется вместе с оператором равенства, оператор отрицания проверяет, являются ли два
+                значения не равными.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy17">
+                  <li>
+                    <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                    <font color="#CF6A4C">3</font>;
+                  </li>
+                  <li>
+                    <font color="#CDA869">!</font>
+                    <font color="#CF6A4C">(</font>
+                    <font color="#CDA869">myVariable === 3</font>
+                    <font color="#CF6A4C">)</font>; <font color="#5F5A60">// Отрицаем значение</font>
+                  </li>
+                  <li>myVariable <font color="#CDA869">!==</font>
+                    <font color="#CF6A4C">3</font>; <font color="#5F5A60">// Проверяем значение</font>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy17')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/javascript/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </ul>
+            <p>Существует намного больше операторов для изучения, но этих пока хватит.</p>
+          </div>
+
+          <!------------------------ Тема 2 ------------------------>
+          <h2 id="№2.2" class="weee text-2xl pt-5 font-medium">
+            Условия
+          </h2>
+          <div class="text-base space-y-4">
+            <p class="pb-3">
+              Условия — это конструкции в коде, которые позволяют проверить истинность или ложность выражения и
+              выполнить другой код в зависимости от полученного результата. Самая распространённая форма условия —
+              инструкция if ... else. Например:
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy18">
+                <li>
+                  <font color="#F9EE98">var</font> iceCream <font color="#CDA869">=</font>
+                  <font color="#8F9D6A">'chocolate'</font>;
+                </li>
+                <li>
+                  <font color="#CDA869">if</font> (iceCream <font color="#CDA869">===</font>
+                  <font color="#8F9D6A">'chocolate'</font>) { <font color="#5F5A60">// Задаем условие</font>
+                </li>
+                <li>
+                  <pre>  <font color="#DAD085">alert</font>(<font color="#8F9D6A">'Yay, I love chocolate ice cream!'</font>);</pre>
+                </li>
+                <li>} <font color="#CDA869">else</font> {</li>
+                <li>
+                  <pre>  <font color="#DAD085">alert</font>(<font color="#8F9D6A">'Awwww, but chocolate is my favorite...'</font>);</pre>
+                </li>
+                <li>}</li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy18')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="pt-3">Выражение внутри if ( ... ) — это проверка, которая использует тождественный оператор (как
+              описано выше), чтобы сравнить переменную iceCream со строкой chocolate и увидеть равны ли они. Если это
+              сравнение возвращает true, выполнится первый блок кода. Если нет, этот код пропустится и выполнится второй
+              блок кода, после инструкции else.</p>
+          </div>
+
+          <!------------------------ Тема 3 ------------------------>
+          <h2 id="№2.3" class="text-2xl pt-5 font-medium">
+            Функции
+          </h2>
+          <div class="text-base space-y-4">
+            <p class="pb-3">
+              Функции - способ упаковки функциональности, которую вы хотите использовать повторно. Всякий раз, когда вам
+              нужна определённая процедура, вы можете просто вызвать функцию по её имени, а не переписывать весь код
+              каждый раз. Вы уже видели некоторые функции, описанные выше, например:
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy19">
+                <li>
+                  <font color="#F9EE98">var</font> myVariable <font color="#CDA869">=</font>
+                  <font color="#7587A6">document</font>.querySelector(<font color="#8F9D6A">'h1'</font>);
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy19')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy20">
+                <li>
+                  <font color="#DAD085">alert</font>(<font color="#8F9D6A">'hello!'</font>);
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy20')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="pt-2">
+              Эти функции, document.querySelector и alert, встроены в браузер для того, чтобы вы использовали их всякий
+              раз, когда вам это необходимо.
+            </p>
+            <p class="">Если вы видите что-то, что выглядит как имя переменной, но имеет после него скобки — (), скорее
+              всего, это функция. Функции часто принимают аргументы — биты данных, которые им необходимы для выполнения
+              своей работы. Они находятся в скобках, и разделяются запятыми, если присутствует более одного аргумента.
+            </p>
+            <p class="">Например, функция alert() вызывает всплывающий блок, появляющийся в окне браузера, но мы должны
+              дать ему строку в качестве аргумента, чтобы сказать функции, что писать во всплывающем блоке.</p>
+            <p class="pb-3">Хорошая новость заключается в том, что вы можете определить свои собственные функции — в
+              следующем примере мы напишем простую функцию, которая принимает два числа в качестве аргументов и умножает
+              их:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy21">
+                <li>
+                  <font color="#DAD085">function</font>
+                  <font color="#AC885B">multiply</font>(<font color="#7587A6">num1</font>,<font color="#7587A6">num2
+                  </font>) {
+                </li>
+                <li>
+                  <pre>  <font color="#DAD085">var</font> result <font color="#CDA869">=</font> num1 <font color="#CDA869">*</font> num2;</pre>
+                </li>
+                <li>
+                  <pre>  <font color="#CDA869">return</font> result;</pre>
+                </li>
+                <li>}</li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy21')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="py-3">Попробуйте запустить вышеупомянутую функцию в консоли, затем попробуйте изменить аргументы,
+              например:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy22">
+                <li>multiply(<font color="#CF6A4C">4</font>,<font color="#CF6A4C">7</font>);</li>
+                <li>multiply(<font color="#CF6A4C">20</font>,<font color="#CF6A4C">20</font>);</li>
+                <li>multiply(<font color="#CF6A4C">0.5</font>,<font color="#CF6A4C">3</font>);</li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy22')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!------------------------ Тема 4 ------------------------>
+          <h2 id="№2.4" class="text-2xl pt-5 font-medium">
+            События
+          </h2>
+          <div class="text-base space-y-4">
+            <p class="pb-3">
+              Для создания действительной интерактивности на веб-сайте вам необходимы события. События — это структура,
+              которая следит за тем, что происходит в браузере, а затем позволяет вам запускать код в ответ на это.
+              Наиболее очевидным является событие клика (en-US), которое вызывается браузером, когда мы щёлкаем по
+              чему-то мышью. Для демонстрации этого события введите следующую команду в вашу консоль, а затем щёлкните
+              по текущей веб-странице:
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy23">
+                <li>
+                  <font color="#7587A6">document</font>.querySelector(<font color="#8F9D6A">'html'</font>).<font
+                    color="#AC885B">onclick</font>
+                  <font color="#CDA869">=</font>
+                  <font color="#DAD085">function</font>() {
+                </li>
+                <li>
+                  <pre>  <font color="#DAD085">alert</font>(<font color="#8F9D6A">'Ouch! Stop poking me!'</font>);</pre>
+                </li>
+                <li>}</li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy23')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="pt-3">
+              Существуют множество способов прикрепить событие к элементу. Здесь мы выбираем <html> элемент и
+              устанавливаем ему обработчик свойства onclick (en-US) анонимной функцией (т.е. безымянной) которая
+              содержит код, который мы хотим запустить для события клика.
+            </p>
+            <p class="pb-3">Обратите внимание, что:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy24">
+                <li>
+                  <font color="#7587A6">document</font>.querySelector(<font color="#8F9D6A">'html'</font>).<font
+                    color="#AC885B">onclick</font>
+                  <font color="#CDA869">=</font>
+                  <font color="#DAD085">function</font>() {};
+                </li>
+              </ul>
+              <div class="flex justify-between gap-1 pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy24')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="py-3">эквивалентно:</p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy25">
+                <li>
+                  <font color="#DAD085">var</font> myHTML <font color="#CDA869">=</font>
+                  <font color="#7587A6">document</font>.querySelector(<font color="#8F9D6A">'html'</font>);
+                </li>
+                <li>myHTML.<font color="#AC885B">onclick</font>
+                  <font color="#CDA869">=</font>
+                  <font color="#DAD085">function</font>() {};
+                </li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy25')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/javascript/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="pb-20 pt-3">Просто так короче.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>

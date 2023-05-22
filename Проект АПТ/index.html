@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!------------------------ Scripts ------------------------>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+  <script src="/resources/static/scripts/main.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!------------------------ Scripts ------------------------>
+
+  <!------------------------ Styles ------------------------>
+  <link rel="stylesheet" href="/resources/static/styles/global.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+  <!------------------------ Styles ------------------------>
+
+  <!------------------------ Fonts ------------------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!------------------------ Fonts ------------------------>
+
+</head>
+
+<body class="bg-[#1E2433]">
+  <!------------------------ Шапка ------------------------>
+  <header
+    class="w-screen z-50 backdrop-sepia-0 bg-gray-50/50 text-gray-50 backdrop-blur fixed flex items-center justify-between">
+    <div class="w-full flex items-center justify-between max-w-7xl mx-auto h-20 gap-6">
+      <div class="flex space-x-10">
+        <a href="#home" class="">
+          <img src="/resources/media/images/Logo.png" alt="logo" />
+        </a>
+        <p class="flex items-center font-bold text-[#1E2433] select-none">
+          Учись программировать <br />
+          вместе с нами
+        </p>
+      </div>
+      <!------------------------ Навигация ------------------------>
+      <nav class="flex items-center gap-4">
+        <a href="/Python.html"
+          class="text-ms text-gray-900 hover:bg-gray-900 hover:text-gray-100 px-3 py-2 duration-200 rounded-md transition ease-in">Python</a>
+
+        <a href="/JavaScript.html"
+          class="text-gray-900 hover:bg-gray-900 hover:text-gray-100 px-3 py-2 duration-200 rounded-md transition ease-in">JavaScript</a>
+      </nav>
+      <!------------------------ Навигация ------------------------>
+
+      <!------------------------ Кнопка "Контакты" ------------------------>
+      <div class="absolute ml-[75%] mt-[90%] w-32 flex justify-evenly">
+        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" data-dropdown-placement="bottom-end"
+          data-dropdown-placement="bottom"
+          class="flex justify-center text-[#a2a3ff] border-2 bg-slate-700 hover:bg-gray-800/90 hover:text-white w-24 py-2 duration-200 rounded-md transition ease-in"
+          type="button">
+          Контакты
+        </button>
+
+        <!------------------------ Dropdown menu ------------------------>
+        <div id="dropdownDivider"
+          class="z-10 hidden bg-gradient-to-bl from-[#A7A3D9] to-[#79A6FE] divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+          <ul class="py-2 text-base text-white" aria-labelledby="dropdownDividerButton">
+            <li>
+              <a href="#discord" onclick="window.open('https://discord.gg/JnmrshNjHW?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2a3ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/logo-ds.png" alt="Discord image" />
+                Discord
+              </a>
+            </li>
+            <li>
+              <a href="#telegram"
+                onclick="window.open('https://t.me/+VyQ9PenyfAM2NTVi?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/tg-pic.png" alt="Telegram image" />
+                Telegram
+              </a>
+            </li>
+            <li>
+              <a href="#vk" onclick="window.open('https://vk.com/id714392577?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/vk.png" alt="VK image" />
+                VK
+              </a>
+            </li>
+          </ul>
+          <div class="py-2">
+            <a href="tel:88005553535" title="Позвонить"
+              class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">8
+              800-555-35-35</a>
+          </div>
+        </div>
+        <!------------------------ Dropdown menu ------------------------>
+      </div>
+      <!------------------------ Кнопка "Контакты" ------------------------>
+    </div>
+  </header>
+  <!------------------------ Шапка ------------------------>
+
+  <main class="">
+    <!------------------------ Landing page ------------------------>
+    <section id="home"
+      class="h-screen max-w-7xl mx-auto gap-32 bg-[#1E2433] flex justify-between items-center text-white md:max-md">
+      <div class="w-full flex flex-col gap-8">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-5xl font-bold mb-4">
+            Узнай что-то новое<br />для себя
+          </h1>
+          <p class="text-ms text-gray-50/50 max-w-4xl text-justify">
+            Удобная и приятная для глаз навигация, современная и простая для
+            восприятия тема!<br />
+            Именно поэтому этот сайт просто клад для новичков в
+            программировании! <br /><br />
+            Здесь ты научишься основам, сможешь найти множество интересующей
+            тебя информации по таким языкам программирования как: Python,
+            JavaScript. <br /><br />
+            Исследуй языки программирования по полной!
+          </p>
+        </div>
+        <a href="#main" type="button" class="w-0">
+          <button class="btn third w-52 px-8 text-base uppercase font-medium py-4 rounded-md">
+            Поехали
+          </button>
+        </a>
+      </div>
+      <img src="/resources/media/images/image main.png" alt="image" class="w-full h-auto" />
+    </section>
+    <!------------------------ Landing page ------------------------>
+
+    <!------------------------ О нас ------------------------>
+    <section class="h-screen mx-auto gap-32 bg-[#2d3444]">
+      <div class="flex justify-center h-52">
+        <h1 class="text-5xl font-bold text-white flex items-center">О нас</h1>
+      </div>
+      <div class="flex flex-col space-y-16">
+        <div class="max-w-7xl mx-auto flex gap-20">
+          <img src="/resources/media/images/free-icon-programing-2463478.png" alt="image"
+            class="h-60 w-60 flex items-center">
+          <p class="text-xl text-gray-50/50 flex items-center border rounded-lg px-8 bg-[#343d52] eee">На сегодняшний день программирование – одно из самых
+            перспективных направлений. Компьютеризация коснулась
+            всех сфер нашей жизни и этот процесс не прекращается. Это делает хороших программистов востребованными
+            специалистами на рынке труда, без соответствующего софта ПК – просто груда железа. Программист – тот
+            человек,
+            который никогда не останется безработным, но на этапе обучения придется приложить массу усилий.
+          </p>
+        </div>
+        <div class="max-w-7xl mx-auto flex gap-20 ">
+          <img src="/resources/media/images/free-icon-code-3195672.png" alt="image" class="h-60 w-60 flex items-center">
+          <p class="text-xl text-gray-50/50 flex items-center border rounded-lg px-8 bg-[#343d52] eee">Поэтому данный сайт будет максимально полезен новичку в
+            этой отрасли, ведь наша цель - обучение молодого и не только поколения основам программирования на
+            различных языках этого самого программирования. В дальнейшем сайт будет пополнятся всё большим и большим количеством
+            данных языков.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!------------------------ О нас ------------------------>
+
+    <!------------------------ Страницы о языках ------------------------>
+    <section class="h-60 bg-[url('/resources/media/images/Backgraund.png')]">
+      <div class="flex flex-col">
+        <div class="flex justify-center">
+          <h1 class="text-5xl font-semibold pt-10">
+            Немного о языках программирования
+          </h1>
+        </div>
+      </div>
+    </section>
+    <!------------------------ Страница о Python ------------------------>
+    <section id="main" class="bg-[#7EA9C0] h-screen p-16 flex flex-col items-center justify-center gap-16">
+      <img src="/resources/media/images/icon-python.png" alt="Python" class="w-40 h-40" />
+      <h1 class="font-semibold text-5xl">Python</h1>
+      <!------------------------ Карточки  ------------------------>
+      <div class="flex flex-row justify-between gap-16 text-gray-50/50">
+        <div class="h-96 w-96 bg-[#1E2433] rounded-3xl border border-slate-800">
+          <h2 class="flex justify-center text-2xl pt-7 font-medium text-white">
+            Что это такое?
+          </h2>
+          <div class="text-base max-w-sm text-justify pt-7 px-7 space-y-3">
+            <p class="">
+              <font color="#7EA9C0">Python</font> — это язык программирования,
+              который широко используется в интернет-приложениях, разработке
+              программного обеспечения, науке о данных и машинном обучении.<br />
+            </p>
+            <p>
+              Разработчики используют <font color="#7EA9C0">Python</font>,
+              потому что он эффективен, прост в изучении, работает на разных
+              платформах.
+            </p>
+          </div>
+        </div>
+        <div class="h-96 w-96 bg-[#1E2433] rounded-3xl border border-slate-800">
+          <h2 class="flex justify-center text-2xl pt-7 font-medium text-white">
+            Где применяется?
+          </h2>
+          <div class="text-base max-w-sm text-justify pt-7 px-7 space-y-3">
+            <p>
+              Язык <font color="#7EA9C0">Python</font> имеет несколько
+              примеров использования:
+            </p>
+            <ul class="list-decimal pl-4">
+              <li>Веб-разработка на стороне сервера</li>
+              <li>Автоматизация с помощью скриптов Python</li>
+              <li>Наука о данных и машинное обучение</li>
+              <li>Разработка программного обеспечения</li>
+            </ul>
+          </div>
+        </div>
+        <div class="h-96 w-96 bg-[#1E2433] rounded-3xl border border-slate-800">
+          <h2 class="flex justify-center text-2xl pt-7 font-medium text-white">
+            Каковы особенности?
+          </h2>
+          <div class="text-base max-w-sm text-justify pt-7 px-7 space-y-3">
+            <p class="">
+              Язык <font color="#7EA9C0">Python</font> уникален благодаря
+              следующим особенностям:
+            </p>
+            <ul class="list-decimal pl-4">
+              <li>Интерпретируемый язык</li>
+              <li>Простой в использовании язык</li>
+              <li>Язык с динамической типизацией</li>
+              <li>Язык высокого уровня</li>
+              <li>Объектно-ориентированный язык</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!------------------------ Карточки  ------------------------>
+    </section>
+    <!------------------------ Страница о Python ------------------------>
+
+    <!------------------------ Страница о JavaScript ------------------------>
+    <section class="bg-[#8AC1A7] h-screen flex flex-col p-16 items-center justify-center gap-16">
+      <img src="/resources/media/images/icon-js.png" alt="JavaScript" class="w-40 h-40" />
+      <h1 class="font-semibold text-5xl">JavaScript</h1>
+      <!------------------------ Карточки  ------------------------>
+      <div class="flex flex-row justify-between gap-16 text-gray-50/50">
+        <div class="h-96 w-96 bg-[#1E2433] rounded-3xl border border-slate-800">
+          <h2 class="flex justify-center text-2xl pt-7 font-medium text-white">
+            Что это такое?
+          </h2>
+          <div class="text-base max-w-sm text-justify pt-7 px-7 space-y-3">
+            <p class="">
+              <font color="#8AC1A7">JavaScript</font> – это язык
+              программирования, который используют разработчики для создания
+              интерактивных веб-страниц.
+            </p>
+            <p>
+              <font color="#8AC1A7">JavaScript</font> является языком
+              программирования при разработки скриптов для выполнения на
+              стороне клиента, что делает его одной из базовых технологий в
+              сети Интернет.
+            </p>
+          </div>
+        </div>
+        <div class="h-96 w-96 bg-[#1E2433] rounded-3xl border border-slate-800">
+          <h2 class="flex justify-center text-2xl pt-7 font-medium text-white">
+            Для чего применяется?
+          </h2>
+          <div class="text-base max-w-sm text-justify pt-7 px-7 space-y-3">
+            <p class="">
+              Язык <font color="#8AC1A7">JavaScript</font> возник как
+              технология на стороне браузера, позволяющая сделать
+              веб-приложения более динамичными.
+            </p>
+            <p>
+              Используя его, браузеры могли реагировать на взаимодействие с
+              пользователем и менять расположение контента на веб-странице.
+            </p>
+          </div>
+        </div>
+        <div class="h-96 w-96 bg-[#1E2433] rounded-3xl border border-slate-800">
+          <h2 class="flex justify-center text-2xl pt-7 font-medium text-white">
+            Каковы преимущества?
+          </h2>
+          <div class="text-base max-w-sm text-justify pt-7 px-7 space-y-3">
+            <p class="">
+              Основными преимществами
+              <font color="#8AC1A7">JavaScript</font> являются:
+            </p>
+            <ul class="list-decimal pl-4">
+              <li>Простота освоения и использования</li>
+              <li>Независимость от платформы</li>
+              <li>Снижение нагрузки на сервер</li>
+              <li>Улучшение пользовательского интерфейса</li>
+              <li>Поддержка параллелизма</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!------------------------ Карточки  ------------------------>
+    </section>
+    <!------------------------ Страница о JavaScript ------------------------>
+
+    <!------------------------ Страницы о языках ------------------------>
+  </main>
+  <!------------------------ Подвал ------------------------>
+  <footer class="bg-[#1E2433] text-gray-50/50 flex flex-col">
+    <hr class="border-gray-50/50" />
+    <p class="flex items-center justify-center py-4">
+      Hello World! &copy; 2023 - Все права защищены.
+    </p>
+  </footer>
+  <!------------------------ Подвал ------------------------>
+</body>
+
+</html>

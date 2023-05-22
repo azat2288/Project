@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python</title>
+
+  <!------------------------ Scripts ------------------------>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript">
+    function Copy(containerid) {
+      let textarea = document.createElement('textarea');
+      textarea.id = 'temp';
+      textarea.style.height = 0;
+      document.body.appendChild(textarea);
+      textarea.value = document.getElementById(containerid).innerText;
+      let selector = document.querySelector('#temp');
+      selector.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+  <script src="/resources/static/scripts/main.js"></script>
+  <!------------------------ Scripts ------------------------>
+
+  <!------------------------ Styles ------------------------>
+  <link rel="stylesheet" href="/resources/static/styles/global.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+  <!------------------------ Styles ------------------------>
+
+  <!------------------------ Fonts ------------------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!------------------------ Fonts ------------------------>
+  
+</head>
+
+<body class="bg-[#1E2433]">
+  <!------------------------ Шапка ------------------------>
+  <header
+    class="w-screen z-50 backdrop-sepia-0 bg-gray-50/50 text-gray-50 backdrop-blur fixed flex items-center justify-between">
+    <div class=" w-full flex items-center justify-between max-w-7xl mx-auto h-20 gap-6">
+      <div class="flex space-x-10">
+        <a href="/index.html" class="">
+          <img src="/resources/media/images/Logo.png" alt="logo">
+        </a>
+        <p class="flex items-center font-bold text-[#1E2433] select-none">Учись программировать <br> вместе с нами</p>
+      </div>
+      <!------------------------ Навигация ------------------------>
+      <nav class="flex items-center gap-4">
+        <a href="/Python.html"
+          class="text-ms text-gray-900 hover:bg-gray-900 hover:text-gray-100 px-3 py-2 duration-200 rounded-md transition ease-in">Python</a>
+        
+        <a href="/JavaScript.html"
+          class=" text-gray-900 hover:bg-gray-900 hover:text-gray-100 px-3 py-2 duration-200 rounded-md transition ease-in">JavaScript</a>
+      </nav>
+      <!------------------------ Навигация ------------------------>
+
+      <!------------------------ Контакты ------------------------>
+      <div class="absolute ml-[75%] mt-[90%] w-32 flex justify-evenly">
+        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" data-dropdown-placement="bottom-end"
+          data-dropdown-placement="bottom"
+          class=" flex justify-center text-[#a2a3ff] border-2 bg-slate-700 hover:bg-gray-800/90 hover:text-white w-24 py-2 duration-200 rounded-md transition ease-in"
+          type="button">Контакты</button>
+
+        <!------------------------ Dropdown menu ------------------------>
+        <div id="dropdownDivider"
+          class="z-10 hidden  bg-gradient-to-bl from-[#A7A3D9] to-[#79A6FE] divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+          <ul class="py-2 text-base text-white" aria-labelledby="dropdownDividerButton">
+            <li>
+              <a href="#discord" onclick="window.open('https://discord.gg/JnmrshNjHW?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2a3ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/logo-ds.png" alt="Discord image">
+                Discord
+              </a>
+            </li>
+            <li>
+              <a href="#telegram"
+                onclick="window.open('https://t.me/+VyQ9PenyfAM2NTVi?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/tg-pic.png" alt="Telegram image">
+                Telegram
+              </a>
+            </li>
+            <li>
+              <a href="#vk" onclick="window.open('https://vk.com/id714392577?url=' + window.location.href +'')"
+                class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">
+                <img class="w-6 h-6 mr-2 rounded-full" src="/resources/media/images/vk.png" alt="VK image">
+                VK
+              </a>
+            </li>
+          </ul>
+          <div class="py-2">
+            <a href="tel:88005553535" title="Позвонить"
+              class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-[#a2c1ff] duration-200">8
+              800-555-35-35</a>
+          </div>
+        </div>
+      </div>
+      <!------------------------ Контакты ------------------------>
+
+    </div>
+
+  </header>   
+  <!------------------------ Шапка ------------------------>
+
+  <!------------------------ Основная часть ------------------------>
+  <main class="bg-[#1E2433] text-white h-screen w-auto flex">
+    <section class="w-4/12  h-screen mt-20 flex justify-end class=" navbar-example"">
+      <!------------------------ Навигация ------------------------>
+      <nav role="navigation"
+        class="nav nav-tabs z-0 flex w-4/12 items-end pt-12 flex-col h-screen fixed font-medium text-right text-white space-y-4 border-r-2 border-gray-50/50">
+        <a href="#№1" id="zero" class="pr-4 left_nav_p text-2xl hover:-translate-x-2 duration-300">Python. Типы
+          данных</a>
+        <div class="flex items-end flex-col text-left gap-2 text-zinc-200">
+          <a href="#№1.1" id="frst" class="active pr-4 text-base left_nav_p hover:-translate-x-1 duration-300">Введение в
+            типы данных</a>
+          <a href="#№1.2" id="sec" class="pr-4 left_nav_p hover:-translate-x-1 duration-300">
+            Изменяемые и неизменяемые типы данных
+          </a>
+        </div>
+        <a href="#№2" id="zerozero" class="pr-4 text-2xl left_nav_p hover:-translate-x-2 duration-300">Условные операторы и
+          циклы</a>
+        <div class="flex items-end flex-col text-left gap-2 text-zinc-200">
+          <a href="#№2.1" id="thrd" class="pr-4 text-base left_nav_p hover:-translate-x-1 duration-300">Условный оператор
+            ветвления if</a>
+          <a href="#№2.2" id="frth" class="pr-4 left_nav_p hover:-translate-x-1 duration-300">
+            Оператор цикла while
+          </a>
+          <a href="#№2.3" id="fv" class="pr-4 left_nav_p hover:-translate-x-1 duration-300">
+            Операторы break и continue
+          </a>
+          <a href="#№2.4" id="sx" class="pr-4 left_nav_p hover:-translate-x-1 duration-300">
+            Оператор цикла for
+          </a>
+        </div>
+      </nav>
+      <!------------------------ Навигация ------------------------>
+
+    </section>
+    <section class="h-auto w-7/12 pt-20 relative z-10" >
+      <div class="pt-12 pl-4 pr-20 space-y-8">
+        <!-------------------- блок 1 -------------------->
+        <h1 id="№1" class="text-3xl font-semibold">
+          Python. Типы данных
+        </h1>
+        <div class="space-y-6 text-base">
+          <!-------------------- Тема 1 -------------------->
+          <h2 id="№1.1" class="text-2xl font-medium">Введение в типы данных</h2>
+          <div class="space-y-4 text-base">
+            <p class="">
+              В Python типы данных можно разделить на встроенные в интерпретатор
+              (built-in) и не встроенные, которые можно использовать при
+              импортировании соответствующих модулей.
+            </p>
+            <p class="">К основным встроенным типам относятся:</p>
+            <ul class="list-decimal ml-12 space-y-1">
+              <li>None (неопределенное значение переменной)</li>
+              <li>Логические переменные (Boolean Type)</li>
+              <li>Числа (Numeric Type)</li>
+              <ul class="list-decimal ml-12 ">
+                <li>int – целое число</li>
+                <li>float – число с плавающей точкой</li>
+                <li>complex – комплексное число</li>
+                <li>Списки (Sequence Type)</li>
+                <li>list – список</li>
+                <li>tuple – кортеж</li>
+                <li>range – диапазон</li>
+              </ul>
+              <li>Строки (Text Sequence Type )</li>
+              <ul class="list-decimal ml-12">
+                <li>str</li>
+              </ul>
+              <li>Бинарные списки (Binary Sequence Types)</li>
+              <ul class="list-decimal ml-12">
+                <li>bytes – байты</li>
+                <li>bytearray – массивы байт</li>
+                <li>
+                  memoryview – специальные объекты для доступа к внутренним
+                  данным объекта через protocol buffer
+                </li>
+              </ul>
+              <li>Множества (Set Types)</li>
+              <ul class="list-decimal ml-12">
+                <li>set – множество</li>
+                <li>frozenset – неизменяемое множество</li>
+              </ul>
+              <li>Словари (Mapping Types)</li>
+              <ul class="list-decimal ml-12">
+                <li>dict – словарь</li>
+              </ul>
+            </ul>
+          </div>
+          <!-------------------- Тема 2 -------------------->
+          <h2 id="№1.2" class="text-2xl pt-5 font-medium">
+            Изменяемые и неизменяемые типы данных
+          </h2>
+          <div class="text-base space-y-4">
+            <p class="">
+              В Python существуют изменяемые и неизменяемые типы.
+            </p>
+            <p class="">
+              К неизменяемым (immutable) типам относятся: целые числа (int), числа
+              с плавающей точкой (float), комплексные числа (complex), логические
+              переменные (bool), кортежи (tuple), строки (str) и неизменяемые
+              множества (frozen set).
+            </p>
+            <p class="">
+              Как уже было сказано ранее, при создании переменной, вначале
+              создается объект, который имеет уникальный идентификатор, тип и
+              значение, после этого переменная может ссылаться на созданный
+              объект.
+            </p>
+            <p class="pb-2">
+              Неизменяемость типа данных означает, что созданный объект больше не
+              изменяется. Например, если мы объявим переменную k = 15, то будет
+              создан объект со значением 15, типа int и идентификатором, который
+              можно узнать с помощью функции id().
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy">
+                <li>k <font color="#CDA869">=</font>
+                  <font color="#CF6A4C">15</font>
+                </li>
+                <li>
+                  <font color="#CDA869">print</font>(<font color="#DAD085">id</font>(k)) <font color="#5F5A60"># Выводим
+                    id переменой</font>
+                </li>
+                <li>
+                  <font color="#CDA869">print</font>(<font color="#DAD085">type</font>(k)) <font color="#5F5A60">#
+                    Выводим тип переменной</font>
+                </li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/python-programming/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="pt-2">
+              Объект с выведеным id будет иметь значение 15 и изменить его уже
+              нельзя.
+            </p>
+            <p class="pb-2">
+              Если тип данных изменяемый, то можно менять значение объекта.
+              Например, создадим список [1, 2], а потом заменим второй элемент на
+              3.
+            </p>
+            <div
+              class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+              <ul class="list-decimal pl-6" id="toCopy1">
+                <li>a <font color="#CDA869">=</font> [<font color="#CF6A4C">1</font>, <font color="#CF6A4C">2</font>]
+                <li>
+                  <font color="#CDA869">print</font>(<font color="#DAD085">id</font>(a)) <font color="#5F5A60"># Выводим
+                    id переменной</font>
+                </li>
+                <li>a[<font color="#CF6A4C">1</font>] <font color="#CDA869">=</font>
+                  <font color="#CF6A4C">3</font>
+                  <font color="#5F5A60"># Изменяем переменную: меняем 2 место в списке</font>
+                </li>
+                <li>
+                  <font color="#CDA869">print</font>(a) <font color="#5F5A60"># Выводим значение переменной</font>
+                </li>
+                <li>
+                  <font color="#CDA869">print</font>(<font color="#DAD085">id</font>(a))
+                </li>
+              </ul>
+              <div class="flex flex-col justify-between pr-3">
+                <button class="pl-[1px]">
+                  <a>
+                    <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                      onclick="Copy('toCopy1')" title="Copy">
+                  </a>
+                </button>
+                <button class="pl-[3px]">
+                  <a href="https://www.programiz.com/python-programming/online-compiler/">
+                    <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" onclick="Copy('toCopy1')"
+                      title="Start">
+                  </a>
+                </button>
+              </div>
+            </div>
+            <p class="pt-2">
+              Как видно, объект на который ссылается переменная a, был изменен.
+            </p>
+            <p class="">
+              В рассмотренном случае, в качестве данных списка, выступают не
+              объекты, а отношения между объектами. Т.е. в переменной a хранятся
+              ссылки на объекты содержащие числа 1 и 3, а не непосредственно сами
+              эти числа.
+            </p>
+          </div>
+        </div>
+
+
+        <!-------------------- блок 2 -------------------->
+        <h1 id="№2" class="text-3xl font-semibold" >
+          Условные операторы и циклы
+        </h1>
+
+        <div class="space-y-6">
+          <!-------------------- Тема 1 -------------------->
+          <h2 id="№2.1" class="text-2xl font-medium">Условный оператор ветвления if</h2>
+
+          <div class="space-y-5 text-base">
+            <p class="">
+              Оператор ветвления if позволяет выполнить определенный набор инструкций в зависимости от некоторого
+              условия. Возможны следующие варианты использования.
+            </p>
+            <ul class="list-decimal font-medium text-xl space-y-4">
+              <li class="ml-6">Конструкция if</li>
+              <div class="text-lg font-normal space-y-4">
+                <p class="pb-2">Синтаксис оператора if выглядит так.</p>
+                <div
+                  class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                  <ul class="list-decimal pl-6" id="toCopy2">
+                    <li>
+                      <font color="#CDA869">if</font>
+                      <font color="#CF6A4C">1</font>
+                      <font color="#CDA869">
+                        &#60;
+                      </font>
+                          <font color="#CF6A4C">10</font>: <font color="#5F5A60"># Выражение(условие)</font>
+                    </li>
+                    <li>
+                      <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">'Правда'</font>)</pre>
+                    </li>
+                    <li>
+                      <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">'1 меньше 10'</font>) <font color="#5F5A60"># Можно написать любое количество инструкций</font></pre>
+                    </li>
+                  </ul>
+                  <div class="flex flex-col justify-between pr-3">
+                    <button class="pl-[1px]">
+                      <a>
+                        <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                          onclick="Copy('toCopy2')" title="Copy">
+                      </a>
+                    </button>
+                    <button class="pl-[3px]">
+                      <a href="https://www.programiz.com/python-programming/online-compiler/">
+                        <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4"
+                          onclick="Copy('toCopy2')" title="Start">
+                      </a>
+                    </button>
+                  </div>
+                </div>
+                <p class="pt-2">
+                  После оператора if записывается выражение. Если это выражение истинно, то выполняются инструкции,
+                  определяемые данным оператором. Выражение является истинным, если его результатом является число не
+                  равное нулю, непустой объект, либо логическое True. После выражения нужно поставить двоеточие “:”.
+                </p>
+                <p>
+                  ВАЖНО: блок кода, который необходимо выполнить, в случае истинности выражения, отделяется четырьмя
+                  пробелами слева!
+                </p>
+              </div>
+              <li class="ml-6">Конструкция if – else</li>
+              <div class="text-base font-normal space-y-4">
+                <p class="pb-2">Бывают случаи, когда необходимо предусмотреть альтернативный вариант выполнения
+                  программы. Т.е. при истинном условии нужно выполнить один набор инструкций, при ложном – другой. Для
+                  этого используется конструкция if – else.
+                </p>
+                <p class="pb-2 ">Пример:</p>
+                <div
+                  class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                  <ul class="list-decimal pl-6" id="toCopy3">
+                    <li>a <font color="#CDA869">=</font>
+                      <font color="#CF6A4C">3</font>
+                    </li>
+                    <li>
+                      <font color="#CDA869">if</font> a <font color="#CDA869">></font>
+                      <font color="#CF6A4C">2</font>:
+                    </li>
+                    <li>
+                      <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"H"</font>)</pre>
+                    </li>
+                    <li>
+                      <font color="#CDA869">else</font>:
+                    </li>
+                    <li>
+                      <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"L"</font>)</pre>
+                    </li>
+                  </ul>
+                  <div class="flex flex-col justify-between pr-3">
+                    <button class="pl-[1px]">
+                      <a>
+                        <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                          onclick="Copy('toCopy3')" title="Copy">
+                      </a>
+                    </button>
+                    <button class="pl-[3px]">
+                      <a href="https://www.programiz.com/python-programming/online-compiler/">
+                        <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                      </a>
+                    </button>
+                  </div>
+                </div>
+                <p>Эта конструкция напечатает: H</p>
+              </div>
+              <li class="ml-6">Конструкция if – elif – else</li>
+              <div class="text-base font-normal space-y-4">
+                <p class="pb-2">Для реализации выбора из нескольких альтернатив можно использовать конструкцию if – elif
+                  – else.</p>
+                <p class="pb-2">Пример:</p>
+                <div
+                  class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                  <ul class="list-decimal pl-6" id="toCopy4">
+                    <li>a <font color="#CDA869">=</font>
+                      <font color="#DAD085">int</font>(<font color="#DAD085">input</font>(<font color="#8F9D6A">"Введите
+                        число:"</font>))
+                    </li>
+                    <li>
+                      <font color="#CDA869">if</font> a <font color="#CDA869">
+                        &#60;
+                      </font>
+                          <font color="#CF6A4C">0</font>:
+                    </li>
+                    <li>
+                      <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"Neg"</font>)</pre>
+                    </li>
+                    <li>
+                      <font color="#CDA869">elif</font> a <font color="#CDA869">==</font>
+                      <font color="#CF6A4C">0</font>:
+                    </li>
+                    <li>
+                      <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"Zero"</font>)</pre>
+                    </li>
+                    <li>
+                      <font color="#CDA869">else</font>:
+                    </li>
+                    <li>
+                      <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"Pos"</font>)</pre>
+                    </li>
+                  </ul>
+                  <div class="flex flex-col justify-between pr-3">
+                    <button class="pl-[1px]">
+                      <a>
+                        <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                          onclick="Copy('toCopy4')" title="Copy">
+                      </a>
+                    </button>
+                    <button class="pl-[3px]">
+                      <a href="https://www.programiz.com/python-programming/online-compiler/">
+                        <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                      </a>
+                    </button>
+                  </div>
+                </div>
+                <p class="pt-2">Если пользователь введет число меньше нуля, то будет напечатано “Neg“, равное нулю –
+                  “Zero“, большее нуля – “Pos“.</p>
+              </div>
+            </ul>
+
+            <!-------------------- Тема 2 -------------------->
+            <h2 id="№2.2" class="text-2xl font-medium">Оператор цикла while</h2>
+
+            <div class="space-y-5 text-base">
+              <p class="pb-2">
+                Оператор цикла while выполняет указанный набор инструкций до тех пор, пока условие цикла истинно.
+                Истинность условия определяется также как и в операторе if. Синтаксис оператора while выглядит так. </p>
+              <p class="">Выполняемый набор инструкций называется телом цикла.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy5">
+                  <li>a <font color="#CDA869">=</font>
+                    <font color="#CF6A4C">0</font>
+                  </li>
+                  <li>
+                    <font color="#CDA869">while</font> a <font color="#CDA869">
+                      &#60;
+                    </font>
+                        <font color="#CF6A4C">7</font>:
+                  </li>
+                  <li>
+                    <pre>  a <font color="#CDA869" >+=</font> <font color="#CF6A4C" >1</font></pre>
+                  </li>
+                  <li>
+                    <font color="#CDA869">print</font>(<font color="#8F9D6A">"A"</font>)
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy5')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/python-programming/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="pt-2">Буква “А” будет выведена семь раз в столбик.</p>
+              <p class="pb-2">Пример бесконечного цикла.</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy6">
+                  <li>a <font color="#CDA869">=</font>
+                    <font color="#CF6A4C">0</font>
+                  </li>
+                  <li>
+                    <font color="#CDA869">while</font> a <font color="#CDA869">==</font>
+                    <font color="#CF6A4C">0</font>:
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"A"</font>)</pre>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy6')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/python-programming/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-------------------- Тема 3 -------------------->
+            <h2 id="№2.3" class="text-2xl pt-2 font-medium">Операторы break и continue</h2>
+            <div class="space-y-5 text-base">
+              <p class="">
+                При работе с циклами используются операторы break и continue.</p>
+              <p>Оператор break предназначен для досрочного прерывания работы цикла while.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy7">
+                  <li>a <font color="#CDA869">=</font>
+                    <font color="#CF6A4C">0</font>
+                  </li>
+                  <li>
+                    <font color="#CDA869">while</font> a <font color="#CDA869">>=</font>
+                    <font color="#CF6A4C">0</font>:
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >if</font> a <font color="#CDA869" >==</font> <font color="#CF6A4C" >7</font>:</pre>
+                  </li>
+                  <li>
+                    <pre>    <font color="#CDA869" >break</font></pre>
+                  </li>
+                  <li>
+                    <pre>  a <font color="#CDA869" >+=</font> <font color="#CF6A4C" >1</font></pre>
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"A"</font>)</pre>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy7')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/python-programming/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="pt-2">В приведенном выше коде, выход из цикла произойдет при достижении переменной a значения 7.
+                Если бы не было этого условия, то цикл выполнялся бы бесконечно.</p>
+              <p>Оператор continue запускает цикл заново, при этом код, расположенный после данного оператора, не
+                выполняется.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy8">
+                  <li>a <font color="#CDA869">=</font>
+                    <font color="#CDA869">-</font>
+                    <font color="#CF6A4C">1</font>
+                  </li>
+                  <li>
+                    <font color="#CDA869">while</font> a <font color="#CDA869">
+                      &#60;
+                    </font>
+                        <font color="#CF6A4C">10</font>:
+                  </li>
+                  <li>
+                    <pre>  a <font color="#CDA869" >+=</font> <font color="#CF6A4C" >1</font></pre>
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >if</font> a <font color="#CDA869" >>=</font> <font color="#CF6A4C" >7</font>:</pre>
+                  </li>
+                  <li>
+                    <pre>    <font color="#CDA869" >continue</font></pre>
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"A"</font>)</pre>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy8')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/python-programming/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="pt-2">При запуске данного кода символ “А” будет напечатан 7 раз, несмотря на то, что всего будет
+                выполнено 11 проходов цикла.</p>
+            </div>
+
+            <!-- Тема 4 -->
+            <h2 id="№2.4" class="text-2xl font-medium">Оператор цикла for</h2>
+
+            <div class="space-y-4 text-base">
+              <p class="">
+                Оператор for выполняет указанный набор инструкций заданное количество раз, которое определяется
+                количеством элементов в наборе.</p>
+              <p class="pb-2">Пример:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy9">
+                  <li>
+                    <font color="#CDA869">for</font> i <font color="#CDA869">in</font>
+                    <font color="#DAD085">range</font>(<font color="#CF6A4C">5</font>):
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >print</font>(<font color="#8F9D6A">"Hello"</font>)</pre>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy9')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/python-programming/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="pt-2">В результате “Hello” будет выведено пять раз.</p>
+              <p>Внутри тела цикла можно использовать операторы break и continue, принцип работы их точно такой же как и
+                в операторе while.</p>
+              <p class="pb-2">Если у вас есть заданный список, и вы хотите выполнить над каждым элементом определенную
+                операцию (возвести в квадрат и напечатать получившееся число), то с помощью for такая задача решается
+                так:</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy10">
+                  <li>lst <font color="#CDA869">=</font> [<font color="#CF6A4C">1</font>, <font color="#CF6A4C">3</font>
+                    , <font color="#CF6A4C">5</font>, <font color="#CF6A4C">7</font>, <font color="#CF6A4C">9</font>]
+                  </li>
+                  <li>
+                    <font color="#CDA869">for</font> i <font color="#CDA869">in</font> lst:
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >print</font>(i <font color="#CDA869" >**</font> <font color="#CF6A4C" >2</font>)</pre>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy10')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/python-programming/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="pb-2 pt-2">Также можно пройти по всем буквам в строке.</p>
+              <div
+                class="font text-sm py-3 pl-3 border-gray-50/50 border-2 bg-slate-900/70 rounded-xl flex flex-row justify-between">
+                <ul class="list-decimal pl-6" id="toCopy11">
+                  <li>word_str <font color="#CDA869">=</font>
+                    <font color="#8F9D6A">"Hello, world!"</font>
+                  </li>
+                  <li>
+                    <font color="#CDA869">for</font> l <font color="#CDA869">in</font> word_str:
+                  </li>
+                  <li>
+                    <pre>  <font color="#CDA869" >print</font>(l)</pre>
+                  </li>
+                </ul>
+                <div class="flex flex-col justify-between pr-3">
+                  <button class="pl-[1px]">
+                    <a>
+                      <img src="/resources/media/images/file-backup.png" alt="backup" class="w-4 h-4"
+                        onclick="Copy('toCopy11')" title="Copy">
+                    </a>
+                  </button>
+                  <button class="pl-[3px]">
+                    <a href="https://www.programiz.com/python-programming/online-compiler/">
+                      <img src="/resources/media/images/play.png" alt="backup" class="w-4 h-4" title="Start">
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p class="pt-2">Строка “Hello, world!” будет напечатана в столбик.</p>
+              <p class="pb-20">На этом закончим краткий обзор операторов ветвления и цикла.</p>
+            </div>
+          </div>
+    </section>
+  </main>
+  <!------------------------ Основная часть ------------------------>
+
+</body>
+
+</html>
